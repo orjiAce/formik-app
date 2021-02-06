@@ -8,8 +8,7 @@ export default function Input({
                                   placeholder,
                                   inputName,
                                   value,
-                                  inputId,
-                                  onChange,
+                                  inputId, onChange,
                                   label,
                                   iconStyle,
                                   ...props
