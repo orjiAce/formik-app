@@ -92,6 +92,25 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
+.customBtn{
+  margin-top: 2%;
+  border: 1px solid #5a22dd;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  align-items: center;
+  display: flex;
+  background: none;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: 0.8s ease;
+
+}
+.customBtn:hover{
+   background: #5a22dd;
+   color: #fff;
+ }
 .card:hover,
 .card:focus,
 .card:active {
