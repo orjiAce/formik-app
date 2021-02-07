@@ -168,3 +168,25 @@ background: none;
     flex-direction: column;
   }
 }
+
+.notfound {
+  color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #090910;
+  font-family: Montserrat,sans-serif;
+}
+.teleMsg{
+  color: #ddd;
+}
+.message{
+  color: #fafafa;
+  font-style: italic;
+ font-size: 1.3em;
+  font-weight: 500;
+
+}
