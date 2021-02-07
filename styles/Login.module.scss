@@ -12,10 +12,9 @@
 
 .title {
   display: flex;
-  height: 100px;
+  height: 50px;
   align-items: center;
   justify-content: center;
-
   width: 80%;
   span{
     font-weight: 600;
@@ -37,6 +36,7 @@
   font-size: 0.9em;
   font-weight: 500;
   color: #cf1a1f;
+  transition: 0.5s ease;
 }
 button{
   margin-top: 2%;
@@ -51,7 +51,7 @@ button{
   cursor: pointer;
   outline: none;
   transition: 0.8s ease;
-  :disabled{
+  &:disabled{
     background: #262626;
     color: #ffffff;
   }
