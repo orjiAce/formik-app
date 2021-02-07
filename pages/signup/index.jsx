@@ -7,6 +7,7 @@ import LoginForm from "../../component/LoginForm";
 import LoginSchema from "../../component/LoginSchema";
 import {motion} from "framer-motion"
 import {useToast} from '@chakra-ui/react'
+import Head from "next/head";
 
 const pageTransition = {
     in: {
@@ -63,6 +64,10 @@ console.log({
     }
     return (
         <div className={SignupStyles.signupWrap}>
+            <Head>
+                <title>Next app | Formik</title>
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
             <div className={SignupStyles.title}>
                 <span className='title'>
                     SIGNUP
