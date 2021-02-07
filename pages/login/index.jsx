@@ -1,16 +1,11 @@
 import React from 'react';
-import {useFormik} from 'formik';
+import {useFormik, Formik} from 'formik';
 import * as Yup from 'yup';
 import SignupStyles from '../../styles/Login.module.scss'
-import {
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-    Field,
-    Input
-} from "@chakra-ui/react"
-import {FaPaperPlane} from "react-icons/fa";
+
+import LoginForm from "../../component/LoginForm";
+import LoginSchema from "../../component/LoginSchema";
+import {FaEnvelope, FaKey, FaPaperPlane, FaUser} from "react-icons/fa";
 import MyInput from "../../component/Input";
 
 const SignupForm = () => {
@@ -29,58 +24,39 @@ const SignupForm = () => {
                 .max(20, 'Must be 20 characters or less')
                 .required('Required'),
             email: Yup.string().email('Invalid email address').required('Required'),
-            password: Yup.string().min(3, "Too short")
+            password: Yup.string().min(3, "Passowrd Too short")
         }),
-        onSubmit: values => {
+        onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
+
+
+
         },
     });
+
+    const handleSubmit = (values) =>{
+        alert(JSON.stringify(values, null, 2));
+
+    }
     return (
         <div className={SignupStyles.signupWrap}>
-<div className={SignupStyles.title}>
-    <h3>
-        Chief, This is where we login!
-    </h3>
-</div>
+            <div className={SignupStyles.title}>
+                <span>
+                    SIGNUP
+                </span>
+            </div>
+            <div className={SignupStyles.title}>
 
-        <form onSubmit={formik.handleSubmit} className={SignupStyles.signupForm}>
-            <label htmlFor="firstName">First Name</label>
-            <input
-                id="firstName"
-                type="text"
-                {...formik.getFieldProps('firstName')}
-            />
-            {formik.touched.firstName && formik.errors.firstName ? (
-                <div>{formik.errors.firstName}</div>
-            ) : null}
-
-            <label htmlFor="lastName">Last Name</label>
-            <input id="lastName" type="text" {...formik.getFieldProps('lastName')} />
-            {formik.touched.lastName && formik.errors.lastName ? (
-                <div>{formik.errors.lastName}</div>
-            ) : null}
-
+                <small>
+                    Chief, This is where the magic happens!
+                </small>
+            </div>
             
-            <label htmlFor="email">Email Address</label>
+            <Formik initialValues={{firstName: '',
+                lastName: '',
+                email: '',
+                password: '' }} validationSchema={LoginSchema} component={LoginForm} onSubmit={handleSubmit}/>
 
-            <input id="email" type="email" {...formik.getFieldProps('email')} />
-            {formik.touched.email && formik.errors.email ? (
-                <div>{formik.errors.email}</div>
-            ) : null}
-
-
-
-
-
-                <label htmlFor="password">Password</label>
-                <input id="password" type="password" {...formik.getFieldProps('password')}  />
-                {formik.touched.password && formik.errors.password ? (
-                    <div>{formik.errors.password}</div>
-                ) : null}
-
-
-            <button type="submit"><FaPaperPlane /> Submit</button>
-        </form>
         </div>
     );
 };

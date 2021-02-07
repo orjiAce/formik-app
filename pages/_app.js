@@ -4,6 +4,7 @@ import React from "react";
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
 import Router from 'next/router';
+import Layout from "../component/Layout";
 //Binding events.
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -23,7 +24,9 @@ const theme = extendTheme({ colors })
 function MyApp({ Component, pageProps }) {
   return (
   <ChakraProvider theme={theme}>
+    <Layout>
     <Component {...pageProps} />
+    </Layout>
   </ChakraProvider>
   )
 }

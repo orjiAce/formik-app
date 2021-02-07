@@ -2,6 +2,7 @@ import React from "react";
 import MyInputStyle from '../styles/InputStyle.module.scss'
 
 export default function Input({
+    input,
                                   inputWrap,
                                   type,
                                   icon,
@@ -23,15 +24,8 @@ export default function Input({
                 <div className={MyInputStyle.iconStyle}>
                     {icon}
                 </div>
-                <input
-                    className={MyInputStyle.input}
-                    type={type}
-                    placeholder={placeholder}
-                    value={value}
-                    id={inputId}
-                    name={inputName}
-                    {...props}
-                />
+
+                {input}
             </div>
         </div>
     );
