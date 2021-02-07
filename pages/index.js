@@ -47,7 +47,7 @@ export default function Home() {
                     <small>This is just a quick, easy and simple formik and NextJs collaboration</small>
                 </div>
                 <div><small>As you copy and paste may you be blessed!</small></div>
-                <Link href='/login'>
+                <Link href='/signup'>
                     <button className={styles.customBtn}>
                         Start here &rarr;
                     </button>

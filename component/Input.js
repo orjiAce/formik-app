@@ -1,18 +1,14 @@
 import React from "react";
 import MyInputStyle from '../styles/InputStyle.module.scss'
 
+//custom input component
 export default function Input({
     input,
                                   inputWrap,
-                                  type,
                                   icon,
-                                  placeholder,
-                                  inputName,
-                                  value,
-                                  inputId, onChange,
+                                  inputId,
                                   label,
-                                  iconStyle,
-                                  ...props
+                                  iconStyle
                               }) {
     return (
         <div className={MyInputStyle.inputStyle}>

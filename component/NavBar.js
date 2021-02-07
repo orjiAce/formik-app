@@ -1,18 +1,22 @@
 import React from 'react';
 import NavbarStyle from '../styles/Navbar.module.scss'
 import Link from 'next/link'
+import Image from "next/image";
+import {FaHeart, FaUser} from "react-icons/fa";
 const NavBar = () => {
     return (
         <nav className={NavbarStyle.navbar}>
             <div className={NavbarStyle.logo}>
-                <h2><em>LOGO</em></h2>
+<Link href='/'>
+
+
+                <Image src='/Crying.png' width={80} height={50}/>
+</Link>
             </div>
             <menu>
                <ul>
                    <li>
-                       <Link href='/login'>
-                           Login
-                       </Link>
+                     <FaUser/>
                    </li>
                </ul>
             </menu>

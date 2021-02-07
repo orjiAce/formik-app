@@ -23,31 +23,8 @@ const pageTransition = {
 const SignupForm = () => {
     let t1 = new TimelineLite();
     const toast = useToast();
-    const formik = useFormik({
-        initialValues: {
-            firstName: '',
-            lastName: '',
-            email: '',
-            password: ''
-        },
-        validationSchema: Yup.object({
-            firstName: Yup.string()
-                .max(15, 'Must be 15 characters or less')
-                .required('Required'),
-            lastName: Yup.string()
-                .max(20, 'Must be 20 characters or less')
-                .required('Required'),
-            email: Yup.string().email('Invalid email address').required('Required'),
-            password: Yup.string().min(3, "Passowrd Too short")
-        }),
-        onSubmit: (values) => {
-           // alert(JSON.stringify(values, null, 2));
 
-
-
-        },
-    });
-
+//this is for animating some text on page transition
     useEffect(() =>{
         t1.from('.title', {
             opacity: 0,
@@ -59,6 +36,8 @@ const SignupForm = () => {
             ease: Power3.easeInOut,
         })
     },[])
+
+
     const handleSubmit = (values) =>{
        // alert(JSON.stringify(values, null, 2));
         //to get your input values
@@ -66,7 +45,12 @@ const SignupForm = () => {
 
         const {firstName, password, lastName, email} = values
         //do whatever you want with them
-
+console.log({
+    firstName,
+    password,
+    lastName,
+    email
+})
         //this is simple toast message that pops up if all inputs fields are correctly filed
         toast({
             title: "Good boy!",
@@ -90,8 +74,13 @@ const SignupForm = () => {
                     Chief, This is where the magic happens!
                 </small>
             </div>
-
+{/*
+motion.div for our awesome page transition using framer-motion
+*/}
             <motion.div exit="out" initial="out" animate="in" variants={pageTransition}>
+                {/*
+                FORMIK
+                */}
             <Formik initialValues={{firstName: '',
                 lastName: '',
                 email: '',

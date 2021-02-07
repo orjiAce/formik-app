@@ -1,14 +1,16 @@
 import {Form} from "formik";
 import loginStyle from '../styles/Login.module.scss'
 import MyInput from "./Input";
-import {FaEnvelope, FaKey, FaPaperPlane, FaUser} from "react-icons/fa";
+import {FaEnvelope, FaKey, FaUser} from "react-icons/fa";
 import SignupStyles from '../styles/Login.module.scss'
 import React from "react";
 
 export default (({handleChange, values, errors, isValid}) => {
     return (<Form className={SignupStyles.signupForm}>
 
-
+        {/*
+        MyInput is a custom Input component i created and designed which can be found in the component folder
+        */}
         <MyInput icon={<FaUser/>} label='First name' input={<input type='text'
                                                                    onChange={handleChange}
                                                                    value={values.firstName}
@@ -29,7 +31,6 @@ export default (({handleChange, values, errors, isValid}) => {
         </div>
 
 
-
         <MyInput label='Your email address' icon={<FaEnvelope/>} input={<input type='email'
                                                                                onChange={handleChange}
                                                                                value={values.email}
@@ -48,7 +49,6 @@ export default (({handleChange, values, errors, isValid}) => {
         <div className={SignupStyles.error}>
             {errors.password}
         </div>
-
 
 
         <button type='submit' disabled={!isValid}>

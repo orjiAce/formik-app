@@ -5,12 +5,15 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <a
-                href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                href="https://twitter.com/vviace_"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Powered by Anyone that has power
+                Powered by Anyone that has Power
             </a>
+            <small>
+                &copy; Copyright infinity
+            </small>
         </footer>
     );
 };
