@@ -191,3 +191,21 @@ background: none;
   font-weight: 500;
 
 }
+
+
+.teleBtn{
+  margin-top: 2%;
+  border:1px solid #0defa7;
+  width: 180px;
+  height: 35px;
+  font-size:0.8em;
+  border-radius: 5px;
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  justify-content: space-evenly;
+  cursor: pointer;
+  outline: none;
+  transition: 0.8s ease;
+
+}
